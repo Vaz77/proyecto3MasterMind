@@ -1,44 +1,55 @@
-*{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-}
 
-.tablero {
-    display:flex;
-    justify-content: center;
-    box-shadow: 0 0.15em 0.25em black;
-    padding: 1.5em;
-    max-width: 21em;
-    margin: 0 auto;
-    
-}
 
-.fila-ficha {
-    display: flex;
+.ficha {
+    width: 3.125em;
+    height: 3.125em;
+    border-radius: 50%;
+    margin-right: 0.625em;
+  }
+
+  .roja {
+    background-color: red;
+  }
+
+  .azul {
+    background-color: blue;
+  }
+
+  .verde {
+    background-color: green;
+  }
+
+  .amarilla {
+    background-color: yellow;
+  }
+
+  .roja, .azul, .verde, .amarilla{
+    margin: 0.6em;
+  }
+
+  .tablero {
+    background-color: darkcyan;
+    border-radius: 0.625em;
+    padding: 1.25em;
     justify-content: center;
     align-items: center;
-}
-.ficha{
-    width: 40px;
-    height: 40px;
+    max-height: 100%;
+    max-width: 37.5em;
+  }
+
+  .check-circle {
+    width: 1em;
+    height: 1em;
     border-radius: 50%;
-    margin: 8px;
-    box-shadow: 0 2px 4px black;
-}
+    border: 2px solid #000;
+    background-color: white;
+    margin: 0.15em;
+  }
 
-.roja{
-    background-color: red;
-}
+  @media (max-width: 576px) {
+    .ficha {
+      width: 2.5em;
+      height: 2.5em;
+    }
+  }
 
-.azul{
-    background-color: blue;
-}
-
-.verde{
-    background-color: green;
-}
-
-.amarilla{
-    background-color: yellow;
-}
