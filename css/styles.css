@@ -85,6 +85,10 @@
   transition: transform 0.3s ease;
 }
 
+.logo img:hover {
+  transform: scale(1.1);
+}
+
 
 .button {
   margin-top: 20px;
