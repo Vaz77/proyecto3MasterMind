@@ -25,6 +25,7 @@
 
   .roja, .azul, .verde, .amarilla{
     margin: 0.6em;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
   }
 
   .tablero {
@@ -33,6 +34,7 @@
     padding: 1.25em;
     max-height: 100%;
     max-width: 37.5em;
+    
   }
 
   .tablero2 {
@@ -59,6 +61,56 @@
       height: 2.5em;
     }
   }
+
+  
+
+
+
+
+
+  .general {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+.logo img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+
+.button {
+  margin-top: 20px;
+}
+
+.button a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff0000;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5%;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+      width: 150px;
+      height: 150px;
+  }
+
+  .button a {
+      padding: 8px 16px;
+  }
+}
+
+
 
   
 
