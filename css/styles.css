@@ -216,4 +216,30 @@
 }
 
 
+.resultado-perdedor {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1.25em;
+  background-image: url(/img/fondoPerdedor.jpeg);
+  background-size: cover;
+}
+
+
+.combinacion-perdedora {
+  display: flex;
+  justify-content: center;
+  gap: 0.625em;
+  margin-bottom: 1.25em;
+}
+
+.bola-perdedora {
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  border: solid 0.16em black;
+  background-color: #ccc;
+}
 
