@@ -162,10 +162,14 @@
 
 
 
-.container {
-  max-width: 37.5em;
-  margin: 0 auto;
-  padding: 0.16em;
+.niveles {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/img/fondoNivel.jpeg);
+  background-size: cover;
 }
 
 .text-center {
@@ -173,10 +177,8 @@
 }
 
 .dificultad-botones {
-  display: flex;
-  justify-content: space-between;
+  margin-top: 20px;
 }
-
 
 
 
