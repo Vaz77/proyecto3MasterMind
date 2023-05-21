@@ -161,7 +161,6 @@
 
 
 
-
 .niveles {
   height: 100vh;
   display: flex;
@@ -177,7 +176,8 @@
 }
 
 .dificultad-botones {
-  margin-top: 20px;
+  margin-top: 1.25em;
+
 }
 
 
@@ -188,4 +188,36 @@
 
 
 
+.resultado {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+}
 
+.text-center {
+  text-align: center;
+}
+
+.botones {
+  display: flex;
+  gap: 1.3em;
+  margin-top: 1.3em;
+}
+
+.boton-pequeno {
+  padding: 0.5em 1em;
+  font-size: 0.9em;
+  border-radius: 0.4em;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-pequeno:hover {
+  background-color: #0056b3;
+}
