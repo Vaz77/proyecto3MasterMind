@@ -133,28 +133,30 @@
   text-align: center;
 }
 
-.acerca {
-  margin: 0 auto;
-  padding: 1.25em;
+
+
+
+
+
+.background {
   background-image: url(/img/fondoAbout.jpeg);
   background-size: cover;
-  max-width: 23.4em;
-  padding: 1.25em;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-
 .about {
-  text-align: center;
+  padding: 1rem;
+  color: #fff;
 }
-
-
-.gif{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.25em;
+.gif-container {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.gif {
   max-width: 100%;
   height: auto;
 }
+
 
 
 
