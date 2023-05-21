@@ -134,24 +134,18 @@
 }
 
 .acerca {
-  max-width: 23em;
   margin: 0 auto;
   padding: 1.25em;
-}
-
-.about {
-  text-align: center;
-}
-
-.container {
+  background-image: url(/img/fondoAbout.jpeg);
+  background-size: cover;
   max-width: 23.4em;
-  margin: 0 auto;
   padding: 1.25em;
 }
 
 .about {
   text-align: center;
 }
+
 
 .gif{
   display: flex;
@@ -162,6 +156,26 @@
   height: auto;
 }
 
+
+
+
+
+
+
+.container {
+  max-width: 37.5em;
+  margin: 0 auto;
+  padding: 0.16em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.dificultad-botones {
+  display: flex;
+  justify-content: space-between;
+}
 
 
 
