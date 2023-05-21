@@ -143,6 +143,30 @@
   text-align: center;
 }
 
+.container {
+  max-width: 23.4em;
+  margin: 0 auto;
+  padding: 1.25em;
+}
+
+.about {
+  text-align: center;
+}
+
+.gif{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.25em;
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
+
+
 
 
 
