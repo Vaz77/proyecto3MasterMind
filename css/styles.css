@@ -194,30 +194,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f1f1f1;
+  padding-bottom: 1.25em;
+  background-image: url(/img/fondoVictoria.jpeg);
+  background-size: cover;
 }
 
-.text-center {
-  text-align: center;
-}
 
-.botones {
+.combinacion-ganadora {
   display: flex;
-  gap: 1.3em;
-  margin-top: 1.3em;
+  justify-content: center;
+  gap: 0.625em;
+  margin-bottom: 1.25em;
 }
 
-.boton-pequeno {
-  padding: 0.5em 1em;
-  font-size: 0.9em;
-  border-radius: 0.4em;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.bola-ganadora {
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  border: solid 0.16em black;
+  background-color: #ccc;
 }
 
-.boton-pequeno:hover {
-  background-color: #0056b3;
-}
+
+
