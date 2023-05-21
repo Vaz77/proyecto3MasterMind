@@ -57,8 +57,8 @@
 
   @media (max-width: 36em) {
     .ficha {
-      width: 2.5em;
-      height: 2.5em;
+      width: 1em;
+      height: 1em;
     }
   }
 
@@ -253,3 +253,48 @@
   background-color: #ccc;
 }
 
+
+
+
+
+
+
+.seleccionColor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  width: 12.5em;
+  height: 12.5em;
+  margin-bottom: 1.25em;
+}
+
+.color-selector {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.25em;
+}
+
+.color-option {
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0 0.625em;
+  border-radius: 50%;
+  background-color: gray;
+  cursor: pointer;
+}
+
+.color-input {
+  width: 9.375em;
+  margin-bottom: 1.25em;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
