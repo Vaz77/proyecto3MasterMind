@@ -68,71 +68,79 @@
 
 
 
-  .general {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-image: url(/img/posibleFondo.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover
-}
-
-.logo img {
-  width: 18.75em;
-  height: 18.75em;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-  transform: scale(1.1);
-}
-
-
-.button {
-  margin-top: 1.25em;
-}
-
-.button a {
-  display: inline-block;
-  padding: 0.625em 1.25em;
-  background-color: #ff0000;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 5%;
-}
-
-@media (max-width: 48em) {
-  .logo img {
-      width: 9.38em;
-      height: 9.38em;
+  .page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .logo {
+    max-width: 10em;
+    max-height: 10em;
+    transition: transform 0.2s;
+  }
+  .logo:hover {
+    transform: scale(1.1);
+  }
+  .button {
+    margin-top: 1em;
+  }
+  @media (max-width: 18.75em) {
+    .logo {
+      max-width: 8em;
+      max-height: 8em; 
+    }
   }
 
-  .button a {
-      padding: 0.5em 1em;
-  }
-}
 
 
 
 
-.game {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+
+
+
+
+
+.jugador{
   background-image: url(/img/fondoJugadores2.jpeg);
   background-size: cover;
+  height: 100vh;
 }
 
-.eleccion {
-  text-align: center;
+.logo {
+  width: 10em;
+  height: 10em;
+  margin-bottom: 1.5em;
+  transition: 1.5s;
+  border-radius: 50%;
+}
+.logo:hover{
+  transform: scale(1.1);
+}
+.titulo {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.grupo-formulario {
+  max-width: 18em;
+  margin: 0 auto;
+  margin-bottom: 1em;
 }
 
+@media (max-width: 36em) {
+  .titulo {
+    font-size: 1.2em;
+  }
+  .grupo-formulario {
+    max-width: 100%;
+    padding: 0 1em;
+  }
+  .boton-personalizado {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+}
 
 
 
