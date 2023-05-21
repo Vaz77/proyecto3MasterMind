@@ -106,8 +106,8 @@
 
 @media (max-width: 48em) {
   .logo img {
-      width: 9.375em;
-      height: 9.375em;
+      width: 9.38em;
+      height: 9.38em;
   }
 
   .button a {
@@ -133,7 +133,15 @@
   text-align: center;
 }
 
+.acerca {
+  max-width: 23em;
+  margin: 0 auto;
+  padding: 1.25em;
+}
 
+.about {
+  text-align: center;
+}
 
 
 
