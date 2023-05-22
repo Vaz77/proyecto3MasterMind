@@ -17,7 +17,6 @@
   }
 
   .tablero {
-    background-color: darkcyan;
     background-image: url(/img/tablero2.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,7 +27,6 @@
   }
 
   .tablero2 {
-    background-color: darkcyan;
     background-image: url(/img/tablero2.jpeg);
     border-radius: 0.625em;
     padding: 1.25em;
@@ -64,24 +62,36 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url(/img/fondoIndex2.jpeg);
+    background-image: url(/img/fondoGeneral.jpeg);
     background-size: cover;
   }
-  .logotipo {
-    max-width: 10em;
-    max-height: 10em;
+
+  .logo {
+    max-width: 50em;
+    max-height: 50em;
     transition: transform 0.2s;
+    margin-top: 5em;
   }
-  .logotipo:hover {
-    transform: scale();
+
+  .logo:hover {
+    transform: scale(1.1);
   }
+
+  .title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: -3em;
+    color: white;
+  }
+
   .button {
     margin-top: 1em;
   }
-  @media (max-width: 18.75em) {
+
+  @media (max-width: 350px) {
     .logo {
-      max-width: 12em;
-      max-height: 12em; 
+      max-width: 8em;
+      max-height: 8em;
     }
   }
 
@@ -95,7 +105,7 @@
 
 
 .jugador{
-  background-image: url(/img/fondoJugadores2.jpeg);
+  background-image: url(/img/fondoGeneral2.jpeg);
   background-size: cover;
   height: 100vh;
 }
@@ -140,7 +150,7 @@
 
 
 .background {
-  background-image: url(/img/fondoAbout.jpeg);
+  background-image: url(/img/fondoGeneral2.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -170,13 +180,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(/img/fondoNivel1.jpeg);
+  background-image: url(/img/fondoGeneral2.jpeg);
   background-size: cover;
 }
 
 .text-center {
   text-align: center;
-  border-radius: 3%;
 }
 
 .dificultad-botones {
@@ -254,41 +263,38 @@
 
 
 .seleccionColor {
+  background-image: url(/img/fondoGeneral2.jpeg);
+  background-size: cover;
+  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100%;
-}
-
-.logo {
-  width: 12.5em;
-  height: 12.5em;
-  margin-bottom: 1.25em;
-}
-
-.color-selector {
-  display: flex;
   justify-content: center;
-  margin-bottom: 1.25em;
-}
-
-.color-option {
-  width: 2.5em;
-  height: 2.5em;
-  margin: 0 0.625em;
-  border-radius: 50%;
-  background-color: gray;
-  cursor: pointer;
-}
-
-.color-input {
-  width: 9.375em;
-  margin-bottom: 1.25em;
 }
 
 .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.color-selector {
+  margin-bottom: 20px;
+}
+
+.color-option {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  display: inline-block;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.color-input {
+  width: 200px;
+  margin-bottom: 20px;
 }
