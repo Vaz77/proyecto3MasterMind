@@ -1,44 +1,33 @@
 
 
 .ficha {
-    width: 3.125em;
-    height: 3.125em;
+    width: 2.5em;
+    height: 2.5em;
     border-radius: 50%;
     margin-right: 0.625em;
   }
 
-  .roja {
-    background-color: red;
-  }
-
-  .azul {
-    background-color: blue;
-  }
-
-  .verde {
-    background-color: green;
-  }
-
-  .amarilla {
-    background-color: yellow;
-  }
-
   .roja, .azul, .verde, .amarilla{
     margin: 0.6em;
-    box-shadow: 0 0.19em 0.5em rgba(0, 0, 0, 0.3);
+    box-shadow: 0.0.3em 0.16em rgba(0, 0, 0, 0.3);
+    border: black 0.16em solid;
+    background-color: grey;
   }
 
   .tablero {
     background-color: darkcyan;
-    border-radius: 0.625em;
+    background-image: url(/img/tablero2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.16em;
     padding: 1.25em;
     max-height: 100%;
     max-width: 37.5em;
-    
   }
 
   .tablero2 {
     background-color: darkcyan;
+    background-image: url(/img/tablero2.jpeg);
     border-radius: 0.625em;
     padding: 1.25em;
     max-height: 100%;
@@ -50,15 +39,15 @@
     width: 1em;
     height: 1em;
     border-radius: 50%;
-    border: 1.44em solid #000;
+    border: 0.16em solid #000;
     background-color: white;
     margin: 0.15em;
   }
 
   @media (max-width: 36em) {
     .ficha {
-      width: 1em;
-      height: 1em;
+      width: 4em;
+      height: 2em;
     }
   }
 
