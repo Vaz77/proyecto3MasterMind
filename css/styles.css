@@ -2,18 +2,17 @@
   user-select:none;
 }
 
-.ficha {
-    width: 2.5em;
-    height: 2.5em;
-    border-radius: 50%;
-    margin-right: 0.625em;
-  }
 
-  .roja, .azul, .verde, .amarilla{
+
+  .ficha1, .ficha2, .ficha3, .ficha4{
     margin: 0.6em;
     box-shadow: 0.0.3em 0.16em ;
     border: black 0.16em solid;
     background-color: grey;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    margin-right: 0.625em;
   }
 
   .tablero {
@@ -86,6 +85,10 @@
 
   .button {
     margin-top: 1em;
+  }
+
+  .selectorTablero{
+    border-radius: 30%;
   }
 
   @media (max-width: 350px) {
@@ -285,7 +288,7 @@
   margin-bottom: 20px;
 }
 
-.color-option {
+.color-option1, .color-option2, .color-option3, .color-option4 {
   width: 50px;
   height: 50px;
   margin-right: 10px;
