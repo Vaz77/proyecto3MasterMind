@@ -10,21 +10,21 @@
 
 </head>
 <body>
-  <div class="container-fluid seleccionColor">
-    <div class="content mb-5">
-      <img src="/img/logotipo.jpeg" alt="Logo" class="logo mt-4">
+<div class="container-fluid seleccionColor">
+  <div class="content mb-5">
+    <img src="/img/logotipo.jpeg" alt="Logo" class="logo mt-4">
       
-      <div class="color-selector text-warning bg-dark">
-        <h1>Seleccion de colores</h1>
-        <div class="color-option1"></div>
-        <div class="color-option2"></div>
-        <div class="color-option3"></div>
-        <div class="color-option4"></div>
-      </div>
-      <input type="color" id="color-picker" class="form-control color-input"/>
-      <a href="./masterMind.html" class="btn btn-warning btn-lg">Aceptar</a>
+    <div class="color-selector text-warning bg-dark">
+      <h1>Seleccion de colores</h1>
+      <div id="colorOption1" class="colorOption"></div>
+      <div id="colorOption2" class="colorOption"></div>
+      <div id="colorOption3" class="colorOption"></div>
+      <div id="colorOption4" class="colorOption"></div>
     </div>
+    <input type="color" id="color-picker" class="form-control color-input"/>
+    <a href="./masterMind.html" id="colorInicial" class="btn btn-warning btn-lg">Aceptar</a>
   </div>
+</div>
 
 <script src="../js/colorPicker.js"></script>
 <script src="../js/main.js"></script>
