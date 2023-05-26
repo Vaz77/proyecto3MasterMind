@@ -85,3 +85,28 @@ eleccionColor2.addEventListener('click', () => {
             
             
             })
+
+
+
+
+            let combinacionUsuario = [];
+            let comprobar = document.getElementById('check');
+            
+            comprobar.addEventListener('click', () => {
+                combinacionUsuario.push(eleccionColor1);
+                console.log('Esta es la combinación del usuario: ' + combinacionUsuario);
+            
+                if (combinacionSecreta.join(" ") === combinacionUsuario.join(" ")) {
+                    // Acciones cuando las combinaciones son iguales
+                }
+            
+                for (let i = 0; i < 4; i++) {
+                    if (combinacionSecreta[i] === combinacionUsuario[i]) {
+                        check.style.backgroundColor = '#000000';
+                    }
+                    if (combinacionSecreta.includes(combinacionUsuario[i])) {
+                        // Acciones cuando se cumple la condición
+                    }
+                }
+            });
+            
