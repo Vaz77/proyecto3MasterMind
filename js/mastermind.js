@@ -87,26 +87,34 @@ eleccionColor2.addEventListener('click', () => {
             })
 
 
+            //Bolitas check
 
+const combinacionUsuario = [];
+const comprobar = document.getElementById('btnCheck');
+const bolitaCheckElements = Array.from(document.getElementsByClassName('check-circle'));
 
-            let combinacionUsuario = [];
-            let comprobar = document.getElementById('check');
+comprobar.addEventListener('click', () => {
+  const eleccionColor1 = document.getElementById('eleccionColor1').value;
+  combinacionUsuario.push(eleccionColor1);
+  console.log('Esta es la combinación del usuario: ' + combinacionUsuario);
+
+  if (combinacionSecreta.join("") === combinacionUsuario.join("")) {
+    // Acciones cuando las combinaciones son iguales
+  }
+
+  for (let i = 0; i < 4; i++) {
+    if (combinacionSecreta[i] === combinacionUsuario[i]) {
+      bolitaCheckElements[i].style.backgroundColor = '#000000';
+    } else {
+      bolitaCheckElements[i].style.backgroundColor = '';
+    }
+
+    if (combinacionSecreta.includes(combinacionUsuario[i])) {
+      // Acciones cuando se cumple la condición
+    }
+  }
+});
+
             
-            comprobar.addEventListener('click', () => {
-                combinacionUsuario.push(eleccionColor1);
-                console.log('Esta es la combinación del usuario: ' + combinacionUsuario);
             
-                if (combinacionSecreta.join(" ") === combinacionUsuario.join(" ")) {
-                    // Acciones cuando las combinaciones son iguales
-                }
-            
-                for (let i = 0; i < 4; i++) {
-                    if (combinacionSecreta[i] === combinacionUsuario[i]) {
-                        check.style.backgroundColor = '#000000';
-                    }
-                    if (combinacionSecreta.includes(combinacionUsuario[i])) {
-                        // Acciones cuando se cumple la condición
-                    }
-                }
-            });
             

@@ -25,16 +25,7 @@
     max-width: 37.5em;
   }
 
-  .tablero2 {
-    background-image: url(/img/tablero2.jpeg);
-    border-radius: 0.625em;
-    padding: 1.25em;
-    max-height: 100%;
-    max-width: 37.5em;
-  }
-
-
-  .check-circle {
+  .check-circle1, .check-circle2, .check-circle3, .check-circle4 {
     width: 1em;
     height: 1em;
     border-radius: 50%;
@@ -42,6 +33,19 @@
     background-color: white;
     margin: 0.15em;
   }
+
+  .btn-custom {
+    background-color: #ff9900;
+    color: #ffffff; 
+    border: none; 
+    border-radius: 4px;
+    padding: 6px 12px;
+  }
+  
+  .btn-custom:hover {
+    background-color: #e68a00;
+  }
+  
 
   @media (max-width: 36em) {
     .ficha {
