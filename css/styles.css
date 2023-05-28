@@ -1,10 +1,12 @@
 *{
   user-select:none;
+  margin: 0;
+  padding: 0;
 }
 
 
 
-  .ficha1, .ficha2, .ficha3, .ficha4{
+  .ficha, .ficha1, .ficha2, .ficha3, .ficha4{
     margin: 0.6em;
     box-shadow: 0.0.3em 0.16em ;
     border: black 0.16em solid;
@@ -25,17 +27,17 @@
     max-width: 37.5em;
   }
 
-  .check-circle1, .check-circle2, .check-circle3, .check-circle4 {
+  .check-circle, .check-circle1, .check-circle2, .check-circle3, .check-circle4 {
     width: 1em;
     height: 1em;
     border-radius: 50%;
     border: 0.16em solid #000;
-    background-color: white;
+    background-color: rgb(47, 255, 0);
     margin: 0.15em;
   }
 
   .btn-custom {
-    background-color: #ff9900;
+    background-color: #00ff1a;
     color: #ffffff; 
     border: none; 
     border-radius: 4px;
@@ -43,7 +45,7 @@
   }
   
   .btn-custom:hover {
-    background-color: #e68a00;
+    background-color: #26ff00;
   }
   
 

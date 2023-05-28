@@ -1,19 +1,24 @@
-    // Seleccionar los elementos de las opciones de color
-    const colorOptions = document.querySelectorAll('.color-selector > div');
-    const colorPicker = document.getElementById('color-picker');
+//SELECCIONAR LOS ELEMNTOS DE LAS OPCIONES DE COLOR
+const colorOptions = document.querySelectorAll('.colorOption');
+console.log(colorOptions)
+const colorPicker = document.getElementById('color-picker');
 
-    // Convertir NodeList en un array
-    const colorOptionsArray = Array.from(colorOptions);
+const colorsArr = []
 
-    // Asignar el color seleccionado a cada opción de color y guardar en sessionStorage
-    colorOptionsArray.forEach((option, index) => {
-      option.addEventListener('click', function () {
-        option.style.backgroundColor = colorPicker.value;
 
-        // Guardar el valor del color en sessionStorage
-        sessionStorage.setItem(`colorOption${index + 1}`, colorPicker.value);
-      });
-    });
+//ASIGNAR EL COLOR SELECCIONADO A CADA OPCION DE COLOR Y GUARDAR EN sessionStorage
+colorOptions.forEach((option, index) => {
+  console.log("Vueltas del forEach:" , index, option)
+  option.addEventListener('click', () => {
+    option.style.backgroundColor = colorPicker.value
+    
+    colorsArr[index] = colorPicker.value
+    
+    //GUARDAR EL VALOR DEL COLOR EN SESSIONSTORAGE
+    sessionStorage.setItem(`colorsArr`, JSON.stringify
+    (colorsArr));
+});
+});
 
     
 
