@@ -6,7 +6,7 @@ function guardarNombre() {
     console.log('Nombre guardado');
     window.location.href = "./niveles.html"; 
     } else {
-    alert('Por favor, ingresa un nombre antes de guardar');
+    alert('Por favor, ingresa un nombre antes de seguir');
     }
 }
 

@@ -65,3 +65,36 @@ comprobar.addEventListener("click", () => {
     }
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+function agregarElementosLista(number){
+    const arrDeListas = document.querySelectorAll('.list')
+    arrDeListas.forEach((lista, index) => {
+
+        for (let index = 0; index < number; index++) {
+            const nuevoElementoHtml = '<button></button>'
+            lista.insertAdjacentHTML("beforeend", nuevoElementoHtml)         
+        }
+
+
+    })
+    
+};
+
+const miLista = document.querySelector('.list')
+const boton = document.querySelector('#btnCheck2')
+
+boton.addEventListener('click', () => {
+  miLista.classList.remove('desabilitar')
+
+});

@@ -6,7 +6,7 @@
 
 
 
-  .ficha, .ficha1, .ficha2, .ficha3, .ficha4{
+  .ficha{
     margin: 0.6em;
     box-shadow: 0.0.3em 0.16em ;
     border: black 0.16em solid;
@@ -25,6 +25,7 @@
     padding: 1.25em;
     max-height: 100%;
     max-width: 37.5em;
+    margin: 0 auto;
   }
 
   .check-circle, .check-circle1, .check-circle2, .check-circle3, .check-circle4 {
