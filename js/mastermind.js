@@ -4,11 +4,18 @@ const colorArray = JSON.parse(sessionStorage.getItem("colorsArr"));
 // CON JSON.PARSE VOLVEMOS A CONVERTIRLO EN EL TIPO DE JAVASCRIPT, OBJETO... ARRAY.... NUMERO...
 
 // CREACIÓN DE VARIABLES / CONSTANTES
-let posicion = 0; // Indicador de la posición para el color
-const eleccionUsuario = ["", "", "", ""]; // ARRAY QUE GUARDARÁ EL COLOR QUE ELIJA EL USUSARIO EN LA POSICIÓN DE LA BOLA QUE LO ELIJA
+const lvlMode = "easy";
+const eleccionUsuario = (lvlMode === "easy") ? [A, B, C, D] : (lvlMode === "medium") ? [A, B, C, D, E] : [A, B, C, D, E, F];// ARRAY QUE GUARDARÁ EL COLOR QUE ELIJA EL USUSARIO EN LA POSICIÓN DE LA BOLA QUE LO ELIJA
 const combinacionSecreta = []; // CREAR ARRAY PARA CONBINACIÓN SECRETA DE COLORES
 const comprobar = document.getElementById("btnCheck"); // CAPTURAR BOTON DE CHECK
 const bolitasCheck = document.querySelectorAll(".fila1 > .check > .d-flex > .check-circle");  // CAPTURAR LAS BOLITAS PEQUEÑAS DEL CHECK
+const filaArray = Array.from(document.querySelectorAll(".fila")).reverse();
+console.log("array filas :", filaArray);
+
+
+
+
+
 
 
 // GENERAR LA CONBINACIÓN SECRETA DE LA PARTIDA
@@ -21,29 +28,30 @@ const creaCombinacionSecreta = () => {
 
 // EJECUTAR LA FUNCIÓN
 creaCombinacionSecreta();
+console.log("este es el codigo secreto :" +combinacionSecreta);
 
-/**********************/
-// CAPTURAR EL ELEMENTO DE LAS BOLAS DONDE EL USUSARIO INSERTARÁ LOS COLORES
-const eleccionColor = document.querySelectorAll(".fila1 > .ficha");
-// querySelectorAll DEVUELVE UN ARRAY CON TODOS LOS ELEMENTOS QUE ENCUENTRE, PUEDE SER UN ARRAY DE 1 POSICIÓN O DE MILES
-// querySelector solo devuelve el elemento que le indiques
-// Para ambos puedes usar "clases (.mi-clase) id (#mi-id) o selectores de html (body, div, header......)"
 
-// RECORREMOS EL ARRAY DE LAS BOLAS DEL USUSARIO PARA ASIGNARLES A CADA UNA EL EVENTO CLICK
-// CUANDO EL USUSARIO HAGA CLICK, SE IRÁN APLICANDO LOS COLORES VISUALMENTE Y GUARDANDO EN NUESTRO ARRAY DE: "eleccionUsuario"
-// ADEMAS INCREMENTAMOS O RESETEAMOS LA POSICIÓN DEL COLOR
-eleccionColor.forEach((eleccionColor, index) => {
+
+
+//EJECUTAR SELECCION DEL JUGADOR
+const playerSelectColor = (fila) => {
+  const eleccionColor = fila.querySelectorAll(".ficha");
+  console.log(eleccionColor)
+  eleccionColor.forEach((eleccionColor, index) => {
+  let posicion = 0;
   eleccionColor.addEventListener("click", () => {
     // AL HACER CLICK ASIGNAMOS EL COLOR
     eleccionColor.style.backgroundColor = colorArray[posicion];
     // Y AGREGAMOS EL COLOR QUE HA ELEGIDO EL USUARIO A NUESTRO ARRAY FINAL
     eleccionUsuario[index] = colorArray[posicion];
-
+    if (posicion > colorArray.length){
+      posicion = 0;
+    }    
     posicion++;
-
-    if (posicion > 3) posicion = 0;
-  });
+  });  
 });
+}
+
 
 
 // CAPTURAR BOTON DE VALIDAR, Y AÑADIR EVENTO CLICK
@@ -65,6 +73,50 @@ comprobar.addEventListener("click", () => {
     }
   });
 });
+
+
+
+//ITERACION FILAS
+let cuentaFilas = 1;
+
+
+const cambioFilas = () => {
+  if(cuentaFilas <= 10 ) {
+      filaArray.forEach((fila, index) => {
+    let filaActiva = document.querySelector(`.fila${cuentaFilas}`)
+    playerSelectColor(filaActiva)
+
+        //BOTONCHECK
+          //COMPROBAR SI HA GANADO
+            //SI HA GANADO: 
+              //COLOREAR DE ROJO LA PUNTUACION
+              //REDIRIGIR A LA PAGINA GANADORA
+            //SI NO HA GANADO
+              //COMPROBAR SI HAY VALORES
+                //SI HAY VALORES
+                  //COMPROBAR VALORES
+                  //PINTAR VALORES
+                  //CUENTAFILAS++
+                //NO HAY VALORES 
+                  //RETURN
+
+
+
+    cuentaFilas++
+  }) 
+  }
+  else{
+    alert("has perdido");
+  }
+}
+cambioFilas() 
+
+
+
+
+
+
+
 
 
 
