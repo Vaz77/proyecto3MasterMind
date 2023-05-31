@@ -69,32 +69,53 @@ comprobar.addEventListener("click", () => {
 
 
 
+/*
+// OBTENER LA DIFICULTAD ALMACENADA EN EL SESSIONSTORAGE
+const dificultadSeleccionada = sessionStorage.getItem("dificultad");
 
+// FUNCIÓN PARA GENERAR EL TABLERO SEGÚN LA DIFICULTAD SELECCIONADA
+const generarTablero = (dificultad) => {
+  let numFilas;
+  let numFichas;
 
+  // DETERMINAR EL NÚMERO DE FILAS Y FICHAS SEGÚN LA DIFICULTAD SELECCIONADA
+  if (dificultad === "facil") {
+    numFilas = 10;
+    numFichas = 4;
+  } if (dificultad === "medio") {
+    numFilas = 8;
+    numFichas = 5;
+  } else if (dificultad === "dificil") {
+    numFilas = 6;
+    numFichas = 6;
+  }
 
+  // LIMPIAR EL TABLERO EXISTENTE
+  const tablero = document.querySelector(".tablero");
+  tablero.innerHTML = "";
 
+  // GENERAR LAS FILAS Y FICHAS DINÁMICAMENTE
+  for (let i = 1; i <= numFilas; i++) {
+    const fila = document.createElement("div");
+    fila.classList.add("fila", `fila${i}`, "d-flex", "align-items-center", "justify-content-center", "mb-3");
 
+    const checkBtn = document.createElement("button");
+    checkBtn.id = `btnCheck${i}`;
+    checkBtn.classList.add("btn", "btn-primary");
+    checkBtn.textContent = "Check";
 
+    fila.appendChild(checkBtn);
 
+    for (let i = 0; i < numFichas; i++) {
+      const ficha = document.createElement("div");
+      ficha.classList.add("ficha");
+      fila.appendChild(ficha);
+    }
 
-function agregarElementosLista(number){
-    const arrDeListas = document.querySelectorAll('.list')
-    arrDeListas.forEach((lista, index) => {
-
-        for (let index = 0; index < number; index++) {
-            const nuevoElementoHtml = '<button></button>'
-            lista.insertAdjacentHTML("beforeend", nuevoElementoHtml)         
-        }
-
-
-    })
-    
+    tablero.appendChild(fila);
+  }
 };
 
-const miLista = document.querySelector('.list')
-const boton = document.querySelector('#btnCheck2')
-
-boton.addEventListener('click', () => {
-  miLista.classList.remove('desabilitar')
-
-});
+// LLAMAR A LA FUNCIÓN INICIALMENTE PARA GENERAR EL TABLERO DE DIFICULTAD SELECCIONADA
+generarTablero(dificultadSeleccionada);
+*/
