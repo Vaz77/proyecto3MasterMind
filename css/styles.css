@@ -28,6 +28,15 @@
     margin: 0 auto;
   }
 
+  .filaInactiva {
+    pointer-events: none;
+
+  }
+
+  .filaActiva {
+    pointer-events: all;
+  }
+
   .check-circle, .check-circle1, .check-circle2, .check-circle3, .check-circle4 {
     width: 1em;
     height: 1em;
@@ -68,7 +77,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url(/img/fondoGeneral.jpeg);
+    background-image: url(/img/fondo1.jpg);
     background-size: cover;
   }
 
@@ -115,7 +124,7 @@
 
 
 .jugador{
-  background-image: url(/img/fondoGeneral2.jpeg);
+  background-image: url(/img/fondo1.jpg);
   background-size: cover;
   height: 100vh;
 }
@@ -160,7 +169,7 @@
 
 
 .background {
-  background-image: url(/img/fondoGeneral2.jpeg);
+  background-image: url(/img/fondo1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -190,7 +199,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(/img/fondoGeneral2.jpeg);
+  background-image: url(/img/fondo1.jpg);
   background-size: cover;
 }
 
@@ -218,7 +227,7 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 1.25em;
-  background-image: url(/img/fondoVictoria.jpeg);
+  background-image: url(/img/fondoVictoria++.jpeg);
   background-size: cover;
 }
 
@@ -273,7 +282,7 @@
 
 
 .seleccionColor {
-  background-image: url(/img/fondoGeneral2.jpeg);
+  background-image: url(/img/fondo1.jpg);
   background-size: cover;
   height: 100vh;
   display: flex;
