@@ -25,7 +25,6 @@ Mastermind es un juego de lógica donde el objetivo es adivinar una combinación
 
 #### Errores conocidos
 No funciona la logica del juego en todo el tablero, solo en la primera fila.
-Presenta errores para iniciar github-pages deployments
 
 
 ---
