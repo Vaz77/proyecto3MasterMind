@@ -4,15 +4,13 @@ const colorArray = JSON.parse(sessionStorage.getItem("colorsArr"));
 // CON JSON.PARSE VOLVEMOS A CONVERTIRLO EN EL TIPO DE JAVASCRIPT, OBJETO... ARRAY.... NUMERO...
 // CREACIÓN DE VARIABLES / CONSTANTES
 const lvlMode = "easy";
-const eleccionUsuario = [];
+const eleccionUsuario = [""];
 //ARRAY QUE GUARDARÁ EL COLOR QUE ELIJA EL USUSARIO EN LA POSICIÓN DE LA BOLA QUE LO ELIJA
 const combinacionSecreta = [];
-const comprobar = document.getElementById("btnCheck");
-const bolitasCheck = document.querySelectorAll(".fila1 > .check > .d-flex > .check-circle");
+let comprobar;
+let bolitasCheck;
 const filaArray = Array.from(document.querySelectorAll(".fila")).reverse();
 console.log("array filas :", filaArray);
-
-
 
 let cuentaFilas = 1;
 const creaCombinacionSecreta = () => {
@@ -23,30 +21,65 @@ const creaCombinacionSecreta = () => {
 };
 // EJECUTAR LA FUNCIÓN
 creaCombinacionSecreta();
-console.log("este es el codigo secreto :" + combinacionSecreta);
+console.log("este es el codigo secreto :", combinacionSecreta);
 //EJECUTAR SELECCION DEL JUGADOR
 const playerSelectColor = (fila) => {
-const eleccionColor = Array.from(fila.querySelectorAll(".ficha"));  console.log(eleccionColor)
-eleccionColor.map((eleccionColor, index) => {
-  let posicion = 0;
-  eleccionColor.addEventListener("click", () => {
-    eleccionColor.style.backgroundColor = colorArray[posicion];
-    //AGREGAMOS EL COLOR QUE HA ELEGIDO EL USUARIO A NUESTRO ARRAY FINAL
-    eleccionUsuario[index] = colorArray[posicion];
-    if (posicion > colorArray.length){
-      posicion = 0;
-    }    
-    posicion++;
-  });  
-  
-});
-playerSelectColor ();
+  const eleccionColor = Array.from(fila.querySelectorAll(".ficha"));
+  console.log(eleccionColor);
+  bolitasCheck = Array.from(fila.querySelectorAll(".check-circle"));
+  comprobar = fila.querySelector(`#btnCheck`);
+  console.log(comprobar);
+  eleccionColor.map((eleccionColor, index) => {
+    let posicion = 0;
+    eleccionColor.addEventListener("click", () => {
+      eleccionColor.style.backgroundColor = colorArray[posicion];
+      //AGREGAMOS EL COLOR QUE HA ELEGIDO EL USUARIO A NUESTRO ARRAY FINAL
+      eleccionUsuario[index] = colorArray[posicion];
+      if (posicion >= colorArray.length - 1) {
+        posicion = 0;
+      } else {
+        posicion++;
+      }
+    });
+  });
 };
 
+//ITERACION FILAS
+const cambioFilas = () => {
+  if (cuentaFilas <= 10) {
+    filaArray.forEach((fila, index) => {
+      let filaActiva = document.querySelector(`.fila${cuentaFilas}`);
+      playerSelectColor(filaActiva);
+      //BOTONCHECK
+      const bolitasCheck = Array.from(filaActiva.querySelectorAll(".check-circle"));
 
+      comprobar.addEventListener("click", () => {
+        //COMPROBAR SI HA GANADO
+        eleccionUsuario.forEach((eleccion, index) => {
+          if (eleccion === combinacionSecreta[index]) {
+            console.log("son iguales");
+            bolitasCheck[index].style.backgroundColor = "#000000";
+          } else if (combinacionSecreta.includes(eleccion)) {
+            console.log("no es igual pero existe");
+            bolitasCheck[index].style.backgroundColor = "#ffffff";
+          } else {
+            bolitasCheck[index].style.backgroundColor = "#2bff00";
+            console.log("no son iguales");
+          }
+        });
+      });
+      cuentaFilas++;
+    });
+  } else {
+    alert("has perdido");
+  }
+};
+cambioFilas();
 
+/*
 comprobar.addEventListener("click", () => {
-document.getElementsByClassName(`fila${cuentaFilas}`).classList.toggle('filaInactiva');
+let filaSeleccionada = document.getElementsByClassName(`fila${cuentaFilas}`);
+playerSelectColor(filaSeleccionada);
   eleccionUsuario.forEach((eleccion, index) => {
     if (eleccion === combinacionSecreta[index]) {
       console.log("son iguales");
@@ -60,7 +93,7 @@ document.getElementsByClassName(`fila${cuentaFilas}`).classList.toggle('filaInac
     }
   });
 });
-
+*/
 /*
 cuentaFilas++;
  //CAPTURAR BOTON DE VALIDAR, Y AÑADIR EVENTO CLICK
@@ -95,33 +128,7 @@ comprobar.addEventListener("click", () => {
 */
 
 
-//ITERACION FILAS
-const cambioFilas = () => {
-  if(cuentaFilas <= 10 ) {
-      filaArray.forEach((fila, index) => {
-    let filaActiva = document.querySelector(`.fila${cuentaFilas}`)
-    playerSelectColor(filaActiva)
-        //BOTONCHECK
-          //COMPROBAR SI HA GANADO
-            //SI HA GANADO: 
-              //COLOREAR DE ROJO LA PUNTUACION
-              //REDIRIGIR A LA PAGINA GANADORA
-            //SI NO HA GANADO
-              //COMPROBAR SI HAY VALORES
-                //SI HAY VALORES
-                  //COMPROBAR VALORES
-                  //PINTAR VALORES
-                  //CUENTAFILAS++
-                //NO HAY VALORES 
-                  //RETURN
-    cuentaFilas++
-  }) 
-  }
-  else{
-    alert("has perdido");
-  }
-}
-cambioFilas() 
+
 
 
 
