@@ -26,9 +26,8 @@ creaCombinacionSecreta();
 console.log("este es el codigo secreto :" + combinacionSecreta);
 //EJECUTAR SELECCION DEL JUGADOR
 const playerSelectColor = (fila) => {
-  const eleccionColor = fila.querySelectorAll(".ficha");
-  console.log(eleccionColor)
-  eleccionColor.forEach((eleccionColor, index) => {
+const eleccionColor = Array.from(fila.querySelectorAll(".ficha"));  console.log(eleccionColor)
+eleccionColor.map((eleccionColor, index) => {
   let posicion = 0;
   eleccionColor.addEventListener("click", () => {
     eleccionColor.style.backgroundColor = colorArray[posicion];
@@ -39,13 +38,15 @@ const playerSelectColor = (fila) => {
     }    
     posicion++;
   });  
+  
 });
-}
+playerSelectColor ();
+};
 
 
 
 comprobar.addEventListener("click", () => {
-  document.getElementsByClassName(`fila${cuentaFilas}`).classList.toggle('filaInactiva');
+document.getElementsByClassName(`fila${cuentaFilas}`).classList.toggle('filaInactiva');
   eleccionUsuario.forEach((eleccion, index) => {
     if (eleccion === combinacionSecreta[index]) {
       console.log("son iguales");
@@ -58,13 +59,11 @@ comprobar.addEventListener("click", () => {
       console.log("no son iguales");
     }
   });
-
-  cuentaFilas++;
 });
 
-
-
-/* CAPTURAR BOTON DE VALIDAR, Y AÑADIR EVENTO CLICK
+/*
+cuentaFilas++;
+ //CAPTURAR BOTON DE VALIDAR, Y AÑADIR EVENTO CLICK
 comprobar.addEventListener("click", () => {
   let cuentaFilas = 1;
   let fila = document.getElementsByClassName(`fila${cuentaFilas}`)
@@ -75,7 +74,7 @@ comprobar.addEventListener("click", () => {
   fila = document.getElementsByClassName(`fila${cuentaFilas}`)
   
   fila.classList.remove("filaInactiva");
-
+  
   eleccionUsuario.forEach((eleccion, index) => {
     if (eleccion === combinacionSecreta[index]) {
       console.log("son iguales");
@@ -92,6 +91,7 @@ comprobar.addEventListener("click", () => {
     }
   });
 });
+
 */
 
 
