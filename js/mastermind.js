@@ -4,31 +4,77 @@ const colorArray = JSON.parse(sessionStorage.getItem("colorsArr"));
 // CON JSON.PARSE VOLVEMOS A CONVERTIRLO EN EL TIPO DE JAVASCRIPT, OBJETO... ARRAY.... NUMERO...
 // CREACIÓN DE VARIABLES / CONSTANTES
 const lvlMode = "easy";
-const eleccionUsuario = [""];
+let eleccionUsuario = [];
 //ARRAY QUE GUARDARÁ EL COLOR QUE ELIJA EL USUSARIO EN LA POSICIÓN DE LA BOLA QUE LO ELIJA
 const combinacionSecreta = [];
 let comprobar;
 let bolitasCheck;
-const filaArray = Array.from(document.querySelectorAll(".fila")).reverse();
-console.log("array filas :", filaArray);
 
+// Capturar todas las filas del tablero y darles la vuelta para que empiece de abajo arriba
+const filaArray = Array.from(document.querySelectorAll(".fila")).reverse();
+
+console.log(filaArray)
+
+// Contador de la fila en la que estás
 let cuentaFilas = 1;
+let totalFilas
+
+const modificarTablero = () => {
+  const nivelTablero = parseInt(sessionStorage.getItem("nivelTablero"));
+
+  switch (nivelTablero) {
+    case 4:
+      totalFilas = 10;
+      break;
+
+    case 5:
+      totalFilas = 8;
+
+      break;
+
+    case 6:
+      totalFilas = 6;
+      break;
+
+    default:
+      break;
+  }
+
+  filaArray.forEach((fila, index) =>{
+    if(index >= totalFilas){
+      fila.classList.add('ocultar')
+    }
+  })
+}
+
+modificarTablero()
+
+
+
+
 const creaCombinacionSecreta = () => {
   for (i = 0; i < 4; i++) {
     let numeroAleatorio = Math.floor(Math.random() * colorArray.length);
     combinacionSecreta.push(colorArray[numeroAleatorio]);
   }
+  console.log("este es el codigo secreto :", combinacionSecreta);
 };
-// EJECUTAR LA FUNCIÓN
 creaCombinacionSecreta();
-console.log("este es el codigo secreto :", combinacionSecreta);
+
+
+
 //EJECUTAR SELECCION DEL JUGADOR
 const playerSelectColor = (fila) => {
   const eleccionColor = Array.from(fila.querySelectorAll(".ficha"));
-  console.log(eleccionColor);
+
+  console.log("Captura de todas las fichas de esa fila", eleccionColor)
+
   bolitasCheck = Array.from(fila.querySelectorAll(".check-circle"));
   comprobar = fila.querySelector(`#btnCheck`);
-  console.log(comprobar);
+  
+  console.log("Captura de los botones check", comprobar);
+
+
   eleccionColor.map((eleccionColor, index) => {
     let posicion = 0;
     eleccionColor.addEventListener("click", () => {
@@ -46,118 +92,53 @@ const playerSelectColor = (fila) => {
 
 //ITERACION FILAS
 const cambioFilas = () => {
-  if (cuentaFilas <= 10) {
-    filaArray.forEach((fila, index) => {
+  console.log("llamo a cambio filas ()")
+  if (cuentaFilas <= totalFilas) {
       let filaActiva = document.querySelector(`.fila${cuentaFilas}`);
+      filaActiva.classList.remove('filaInactiva')
+      
       playerSelectColor(filaActiva);
+      
+      console.log("fila activa: ", filaActiva)
       //BOTONCHECK
       const bolitasCheck = Array.from(filaActiva.querySelectorAll(".check-circle"));
-
+      
       comprobar.addEventListener("click", () => {
-        //COMPROBAR SI HA GANADO
-        eleccionUsuario.forEach((eleccion, index) => {
-          if (eleccion === combinacionSecreta[index]) {
-            console.log("son iguales");
-            bolitasCheck[index].style.backgroundColor = "#000000";
-          } else if (combinacionSecreta.includes(eleccion)) {
-            console.log("no es igual pero existe");
-            bolitasCheck[index].style.backgroundColor = "#ffffff";
-          } else {
-            bolitasCheck[index].style.backgroundColor = "#2bff00";
-            console.log("no son iguales");
+
+        if(eleccionUsuario.length < 4){
+          alert("tienes que elegir los 4 colores tonto")
+        }else{
+          console.log(eleccionUsuario === combinacionSecreta)
+
+          //COMPROBAR SI HA GANADO
+          if(JSON.stringify(eleccionUsuario) === JSON.stringify(combinacionSecreta)){
+
+            //PÁGINA DE VICTORIA
           }
+
+          filaActiva.classList.add('filaInactiva')
+          eleccionUsuario.forEach((eleccion, index) => {
+            if (eleccion === combinacionSecreta[index]) {
+              console.log("son iguales");
+              bolitasCheck[index].style.backgroundColor = "#000000";
+            } else if (combinacionSecreta.includes(eleccion)) {
+              console.log("no es igual pero existe");
+              bolitasCheck[index].style.backgroundColor = "#ffffff";
+            } else {
+              bolitasCheck[index].style.backgroundColor = "#2bff00";
+              console.log("no son iguales");
+            }
+          });
+          eleccionUsuario = []
+          cuentaFilas++;
+          cambioFilas();
+        }
         });
-      });
-      cuentaFilas++;
-    });
   } else {
+
+    // PÁGINA DE DERROTA
     alert("has perdido");
   }
 };
+
 cambioFilas();
-
-/*
-comprobar.addEventListener("click", () => {
-let filaSeleccionada = document.getElementsByClassName(`fila${cuentaFilas}`);
-playerSelectColor(filaSeleccionada);
-  eleccionUsuario.forEach((eleccion, index) => {
-    if (eleccion === combinacionSecreta[index]) {
-      console.log("son iguales");
-      bolitasCheck[index].style.backgroundColor = "#000000";
-    } else if (combinacionSecreta.includes(eleccion)) {
-      console.log("no es igual pero existe");
-      bolitasCheck[index].style.backgroundColor = "#ffffff";
-    } else {
-      bolitasCheck[index].style.backgroundColor = "#2bff00";
-      console.log("no son iguales");
-    }
-  });
-});
-*/
-/*
-cuentaFilas++;
- //CAPTURAR BOTON DE VALIDAR, Y AÑADIR EVENTO CLICK
-comprobar.addEventListener("click", () => {
-  let cuentaFilas = 1;
-  let fila = document.getElementsByClassName(`fila${cuentaFilas}`)
-  console.log (`fila${cuentaFilas}`)
-  console.log("Esta es la variable fila" + fila)
-  fila.classList.add("filaInactiva");
-  cuentaFilas++
-  fila = document.getElementsByClassName(`fila${cuentaFilas}`)
-  
-  fila.classList.remove("filaInactiva");
-  
-  eleccionUsuario.forEach((eleccion, index) => {
-    if (eleccion === combinacionSecreta[index]) {
-      console.log("son iguales");
-
-      bolitasCheck[index].style.backgroundColor = "#000000";
-    } else if (combinacionSecreta.includes(eleccion)) {
-      console.log("no es igual pero existe");
-
-      bolitasCheck[index].style.backgroundColor = "#ffffff";
-    } else {
-      bolitasCheck[index].style.backgroundColor = "#2bff00";
-
-      console.log("no son iguales");
-    }
-  });
-});
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-//POSIBLE TABLERO DINAMICO
-const iniciarJuego = (nivel) => {
-  let numeroFichas = 4;
-
-  if (nivel === 'medio') {
-    numeroFichas = 5;
-  } else if (nivel === 'dificil') {
-    numeroFichas = 7;
-  } 
-
-  const combinacion = document.querySelector('.combinacion');
-  combinacion.innerHTML = '';
-
-  for (let i = 0; i < numeroFichas; i++) {
-    const ficha = document.createElement('div');
-    ficha.classList.add('ficha');
-    combinacion.appendChild(ficha);
-  }
-
-};
-
- */
