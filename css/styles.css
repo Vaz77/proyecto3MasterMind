@@ -1,129 +1,121 @@
-*{
-  user-select:none;
+* {
+  user-select: none;
   margin: 0;
   padding: 0;
 }
 
+.background-tablero{
+  height: 100vh;
+}
 
 
-  .ficha{
-    margin: 0.6em;
-    box-shadow: 0.0.3em 0.16em ;
-    border: black 0.16em solid;
-    background-color: grey;
-    width: 2.5em;
-    height: 2.5em;
-    border-radius: 50%;
-    margin-right: 0.625em;
+
+.ficha {
+  margin: 0.6em;
+  box-shadow: 0.3em 0.16em;
+  border: black 0.16em solid;
+  background-color: grey;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  margin-right: 0.625em;
+}
+
+.tablero {
+  background-image: url(../img/tablero2.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.16em;
+  padding: 1.25em;
+  max-height: 100%;
+  max-width: 37.5em;
+  margin: 0 auto;
+}
+
+.filaActiva {
+  pointer-events: all;
+}
+
+.filaInactiva {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.check-circle,
+.check-circle1,
+.check-circle2,
+.check-circle3,
+.check-circle4 {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  border: 0.16em solid #000;
+  background-color: rgb(47, 255, 0);
+  margin: 0.15em;
+}
+
+.btn-custom {
+  background-color: #00ff1a;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+}
+
+.btn-custom:hover {
+  background-color: #26ff00;
+}
+
+@media (max-width: 36em) {
+  .ficha {
+    width: 4em;
+    height: 2em;
   }
+}
 
-  .tablero {
-    background-image: url(../img/tablero2.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 0.16em;
-    padding: 1.25em;
-    max-height: 100%;
-    max-width: 37.5em;
-    margin: 0 auto;
-  }
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: url(../img/fondo1.jpg);
+  background-size: cover;
+}
 
-  .filaInactiva {
-    pointer-events: none;
+.logo {
+  max-width: 50em;
+  max-height: 50em;
+  transition: transform 0.2s;
+  margin-top: 5em;
+}
 
-  }
+.logo:hover {
+  transform: scale(1.1);
+}
 
-  .filaActiva {
-    pointer-events: all;
-  }
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: -3em;
+  color: white;
+}
 
-  .check-circle, .check-circle1, .check-circle2, .check-circle3, .check-circle4 {
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    border: 0.16em solid #000;
-    background-color: rgb(47, 255, 0);
-    margin: 0.15em;
-  }
+.button {
+  margin-top: 1em;
+}
 
-  .btn-custom {
-    background-color: #00ff1a;
-    color: #ffffff; 
-    border: none; 
-    border-radius: 4px;
-    padding: 6px 12px;
-  }
-  
-  .btn-custom:hover {
-    background-color: #26ff00;
-  }
-  
+.selectorTablero {
+  border-radius: 30%;
+}
 
-  @media (max-width: 36em) {
-    .ficha {
-      width: 4em;
-      height: 2em;
-    }
-  }
-
-  
-
-
-
-
-
-  .page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-image: url(../img/fondo1.jpg);
-    background-size: cover;
-  }
-
+@media (max-width: 350px) {
   .logo {
-    max-width: 50em;
-    max-height: 50em;
-    transition: transform 0.2s;
-    margin-top: 5em;
+    max-width: 8em;
+    max-height: 8em;
   }
+}
 
-  .logo:hover {
-    transform: scale(1.1);
-  }
-
-  .title {
-    font-size: 48px;
-    font-weight: bold;
-    margin-top: -3em;
-    color: white;
-  }
-
-  .button {
-    margin-top: 1em;
-  }
-
-  .selectorTablero{
-    border-radius: 30%;
-  }
-
-  @media (max-width: 350px) {
-    .logo {
-      max-width: 8em;
-      max-height: 8em;
-    }
-  }
-
-
-
-
-
-
-
-
-
-
-.jugador{
+.jugador {
   background-image: url(../img/fondo1.jpg);
   background-size: cover;
   height: 100vh;
@@ -136,7 +128,7 @@
   transition: 1.5s;
   border-radius: 50%;
 }
-.logo:hover{
+.logo:hover {
   transform: scale(1.1);
 }
 .titulo {
@@ -164,10 +156,6 @@
   }
 }
 
-
-
-
-
 .background {
   background-image: url(../img/fondo1.jpg);
   background-size: cover;
@@ -187,12 +175,6 @@
   height: auto;
 }
 
-
-
-
-
-
-
 .niveles {
   height: 100vh;
   display: flex;
@@ -209,16 +191,7 @@
 
 .dificultad-botones {
   margin-top: 1.25em;
-
 }
-
-
-
-
-
-
-
-
 
 .resultado {
   height: 100vh;
@@ -230,7 +203,6 @@
   background-image: url(../img/fondoVictoria++.jpeg);
   background-size: cover;
 }
-
 
 .combinacion-ganadora {
   display: flex;
@@ -247,7 +219,6 @@
   background-color: #ccc;
 }
 
-
 .resultado-perdedor {
   height: 100vh;
   display: flex;
@@ -258,7 +229,6 @@
   background-image: url(../img/fondoPerdedor.jpeg);
   background-size: cover;
 }
-
 
 .combinacion-perdedora {
   display: flex;
@@ -274,12 +244,6 @@
   border: solid 0.16em black;
   background-color: #ccc;
 }
-
-
-
-
-
-
 
 .seleccionColor {
   background-image: url(../img/fondo1.jpg);
@@ -304,7 +268,10 @@
   margin-bottom: 20px;
 }
 
-.colorOption, .colorOption, .colorOption, .colorOption {
+.colorOption,
+.colorOption,
+.colorOption,
+.colorOption {
   width: 50px;
   height: 50px;
   margin-right: 10px;
@@ -316,4 +283,8 @@
 .color-input {
   width: 200px;
   margin-bottom: 20px;
+}
+
+.ocultar {
+  display: none!important;
 }
