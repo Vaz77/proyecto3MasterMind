@@ -106,7 +106,7 @@ const cambioFilas = () => {
       comprobar.addEventListener("click", () => {
 
         if(eleccionUsuario.length < 4){
-          alert("tienes que elegir los 4 colores tonto")
+          
         }else{
           console.log(eleccionUsuario === combinacionSecreta)
 
@@ -114,6 +114,7 @@ const cambioFilas = () => {
           if(JSON.stringify(eleccionUsuario) === JSON.stringify(combinacionSecreta)){
 
             //PÁGINA DE VICTORIA
+            window.location.href = "../pages/vistaGanador.html";
           }
 
           filaActiva.classList.add('filaInactiva')
@@ -135,8 +136,6 @@ const cambioFilas = () => {
         }
         });
   } else {
-
-    // PÁGINA DE DERROTA
     window.location.href = "../pages/vistaPerdedor.html";
   }
 };
