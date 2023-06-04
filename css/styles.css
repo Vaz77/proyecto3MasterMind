@@ -55,7 +55,7 @@
 }
 
 .btn-custom {
-  background-color: #00ff1a;
+  background-color: #4C00FF62;
   color: #ffffff;
   border: none;
   border-radius: 4px;
@@ -63,7 +63,7 @@
 }
 
 .btn-custom:hover {
-  background-color: #26ff00;
+  background-color: #4C00FF62;
 }
 
 @media (max-width: 36em) {

@@ -30,7 +30,9 @@ Mastermind es un juego de lógica donde el objetivo es adivinar una combinación
 ---
 
 #### Referencias 
+
 Este proyecto está creado desde 0, inspirado en el juego MasterMind.
+
 ---
 
 
