@@ -15,16 +15,13 @@ La web con el juego Mastermind se puede ejecutar en navegadores web y teléfonos
 Mastermind es un juego de lógica donde el objetivo es adivinar una combinación secreta de colores. El jugador debe intentar descubrir la combinación correcta en el menor número de intentos posible. Cada intento realizado por el jugador es evaluado y se le proporcionan pistas para ayudarlo a deducir la combinación correcta.
 
 1: Selección de jugador: Debes introducir un nombre para poder continuar.
-<img src=""  width="" height="150">
-2: Selección de dificultad: Debes selecionar la dificultad a la que quieres jugar.
-<img src=""  width="" height="150">
-3: Selección de colores: Debes selecionar los colores con los que deseas jugar. Recuerda seleccionar colores de tonos diferenciados para facilitar la jugabilidad.
-<img src=""  width="" height="150">
-4: Inicio del juego:
-<img src=""  width="" height="150">
-- Para empezar a jugar, pulsa sobre las casillas visibles hasta seleccionar los 4 colores de tu jugada. Una vez hayas seleccionado los 4 colores, pulsa el boton "Comprobar" para revisar la puntuación y continuar el juego. Si aciertas posicion y color disponible, las bolitas de la derecha se pintarán en color negro, si aciertas solo el color disponible, se pintarán en color blanco.
-<img src=""  width="" height="150">
 
+2: Selección de dificultad: Debes selecionar la dificultad a la que quieres jugar.
+
+3: Selección de colores: Debes selecionar los colores con los que deseas jugar. Recuerda seleccionar colores de tonos diferenciados para facilitar la jugabilidad.
+
+4: Inicio del juego:
+- Para empezar a jugar, pulsa sobre las casillas visibles hasta seleccionar los 4 colores de tu jugada. Una vez hayas seleccionado los 4 colores, pulsa el boton "Comprobar" para revisar la puntuación y continuar el juego. Si aciertas posicion y color disponible, las bolitas de la derecha se pintarán en color negro, si aciertas solo el color disponible, se pintarán en color blanco.
 - Si aciertas los 4 colores y las 4 posiciones, habrás ganado. 
 - Si no aciertas la combinacion de colores en el número de tiradas disponibles, habrás perdido. 
 - Si quieres volver a empezar la partida, puedes pulsar el boton "Volver a jugar".

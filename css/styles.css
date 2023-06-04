@@ -12,8 +12,8 @@
 
 .ficha {
   margin: 0.6em;
-  box-shadow: 0.3em 0.16em;
-  border: black 0.16em solid;
+  box-shadow: 0.1em 0.16em;
+  border: rgba(255, 247, 0, 0.524) 0.16em solid;
   background-color: grey;
   width: 2.5em;
   height: 2.5em;
@@ -22,13 +22,13 @@
 }
 
 .tablero {
-  background-image: url(../img/tablero2.jpeg);
+  background-image: url(../img/fondoTablero6.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 0.16em;
+  border-radius: 1em;
   padding: 1.25em;
   max-height: 100%;
-  max-width: 37.5em;
+  max-width: 33em;
   margin: 0 auto;
 }
 
@@ -50,7 +50,7 @@
   height: 1em;
   border-radius: 50%;
   border: 0.16em solid #000;
-  background-color: rgb(47, 255, 0);
+  background-color: rgba(76, 0, 255, 0.383);
   margin: 0.15em;
 }
 
@@ -202,7 +202,7 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 1.25em;
-  background-image: url(../img/fondoVictoria++.jpeg);
+  background-image: url(../img/fondo1.jpg);
   background-size: cover;
 }
 
