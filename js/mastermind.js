@@ -61,6 +61,13 @@ const creaCombinacionSecreta = () => {
 };
 creaCombinacionSecreta();
 
+// Mostrar los colores de la combinación secreta en la página de vistaPerdedor
+const mostrarColoresMastermind = () => {
+  sessionStorage.setItem("combinacionSecreta", JSON.stringify(combinacionSecreta));
+};
+
+mostrarColoresMastermind();
+
 
 
 //EJECUTAR SELECCION DEL JUGADOR
@@ -95,28 +102,20 @@ const cambioFilas = () => {
   console.log("llamo a cambio filas ()")
   if (cuentaFilas <= totalFilas) {
       let filaActiva = document.querySelector(`.fila${cuentaFilas}`);
-      filaActiva.classList.remove('filaInactiva')
-      
-      playerSelectColor(filaActiva);
-      
+      filaActiva.classList.remove('filaInactiva')    
+      playerSelectColor(filaActiva);   
       console.log("fila activa: ", filaActiva)
       //BOTONCHECK
       const bolitasCheck = Array.from(filaActiva.querySelectorAll(".check-circle"));
-      
       comprobar.addEventListener("click", () => {
-
         if(eleccionUsuario.length < 4){
-          
         }else{
           console.log(eleccionUsuario === combinacionSecreta)
-
           //COMPROBAR SI HA GANADO
           if(JSON.stringify(eleccionUsuario) === JSON.stringify(combinacionSecreta)){
-
             //PÁGINA DE VICTORIA
             window.location.href = "../pages/vistaGanador.html";
           }
-
           filaActiva.classList.add('filaInactiva')
           eleccionUsuario.forEach((eleccion, index) => {
             if (eleccion === combinacionSecreta[index]) {

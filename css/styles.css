@@ -268,6 +268,7 @@
   margin-bottom: 20px;
 }
 
+.circulo,
 .colorOption,
 .colorOption,
 .colorOption,
@@ -293,6 +294,6 @@
 .nombre {
   border-radius: 20%;
   height: 1.5em;
-  
+
 
 }
