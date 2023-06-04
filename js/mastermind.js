@@ -137,7 +137,7 @@ const cambioFilas = () => {
   } else {
 
     // PÁGINA DE DERROTA
-    alert("has perdido");
+    window.location.href = "../pages/vistaPerdedor.html";
   }
 };
 
