@@ -156,11 +156,13 @@
   }
 }
 
-.background {
+.background-about {
   background-image: url(../img/fondo1.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  height:100%;
+
 }
 .about {
   padding: 1rem;
