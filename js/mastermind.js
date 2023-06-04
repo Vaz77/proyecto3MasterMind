@@ -125,7 +125,7 @@ const cambioFilas = () => {
               console.log("no es igual pero existe");
               bolitasCheck[index].style.backgroundColor = "#ffffff";
             } else {
-              bolitasCheck[index].style.backgroundColor = "#2bff00";
+              bolitasCheck[index].style.backgroundColor = "#4C00FF62";
               console.log("no son iguales");
             }
           });
